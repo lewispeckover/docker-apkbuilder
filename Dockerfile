@@ -4,7 +4,7 @@ ENTRYPOINT /entrypoint.sh
 WORKDIR /build
 RUN 	apk add --no-cache alpine-sdk \
 	&& adduser -HDh /build builder \
-	&& echo "builder  ALL=(ALL) ALL" >> /etc/sudoers \
+	&& echo "builder  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
 	&& addgroup builder abuild \
 	&& mkdir -p /build /var/cache/distfiles \
 	&& chgrp abuild /build /var/cache/distfiles \
