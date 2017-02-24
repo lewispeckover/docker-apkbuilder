@@ -4,5 +4,5 @@ RUN 	apk add --no-cache alpine-sdk \
 	&& echo "builder  ALL=(ALL) ALL" >> /etc/sudoers \
 	&& addgroup builder abuild \
 	&& mkdir -p /build /var/cache/distfiles \
-	&& chgrp abuild /var/cache/distfiles \
-	&& chmod g+w /var/cache/distfiles
+	&& chgrp abuild /build /var/cache/distfiles \
+	&& chmod g+w /build /var/cache/distfiles
