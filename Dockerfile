@@ -1,6 +1,7 @@
 FROM lewispeckover/base:3.5
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["-r"]
 WORKDIR /build
 RUN 	apk add --no-cache alpine-sdk \
 	&& adduser -HDh /build builder \
