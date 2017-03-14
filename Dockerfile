@@ -3,7 +3,7 @@ COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["-r"]
 WORKDIR /build
-RUN 	apk add --no-cache alpine-sdk \
+RUN 	apk add --no-cache alpine-sdk bash \
 	&& adduser -HDh /build builder \
 	&& echo "builder  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
 	&& addgroup builder abuild \
